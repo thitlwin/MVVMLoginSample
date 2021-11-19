@@ -1,13 +1,15 @@
 package com.thit.mvvmloginsampleprj.data.network
 
+import android.content.Context
 import com.thit.mvvmloginsampleprj.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
+import javax.inject.Inject
 
 
-class RemoteDataSource {
+class RemoteDataSource @Inject constructor() {
     companion object {
         private const val BASE_URL = "http://18.142.100.98/"
     }

@@ -7,9 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.thit.mvvmloginsampleprj.data.network.Resource
 import com.thit.mvvmloginsampleprj.data.repository.AuthRepository
 import com.thit.mvvmloginsampleprj.data.responses.LoginResponse
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
+@HiltViewModel
+class AuthViewModel @Inject constructor(private val repository: AuthRepository) : ViewModel() {
 
     private val _loginResponse: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
     val loginResponse: LiveData<Resource<LoginResponse>>
